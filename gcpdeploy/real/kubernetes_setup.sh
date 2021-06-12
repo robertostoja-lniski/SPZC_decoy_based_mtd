@@ -16,8 +16,11 @@ export GOOGLE_CLOUD_PROJECT=`gcloud config list --format="value(core.project)"`
 kubectl create deployment spzc-decoy-mtd-real \
   --image=gcr.io/$GOOGLE_CLOUD_PROJECT/spzc-decoy-mtd-real:v1
 
+echo Czekam minute na uruchomienie poda.
+sleep 60s
+
 # opens connection to Pods by Kubernetes LB
-kubectl create service loadbalancer hello-java --tcp=8080:8080
+kubectl create service loadbalancer spzc-decoy-mtd-real --tcp=8080:8080
 
 # printing info to stdout
 echo Kubernetes configuration done
