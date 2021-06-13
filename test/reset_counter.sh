@@ -9,7 +9,7 @@ do
   echo Adding $new_nodes_num nodes took: $SECONDS seconds
 
   SECONDS=0
-#  gcloud container clusters resize spzc-reset-ip --num-nodes $num_nodes --zone us-central1-c -q > /dev/null
+  gcloud container clusters resize spzc-reset-ip --num-nodes $num_nodes --zone us-central1-c -q > /dev/null
   echo Removing $num_nodes old nodes nodes took: $SECONDS seconds
 
 done
