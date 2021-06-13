@@ -5,21 +5,20 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
-import spzc.mtd.project_decoy_mtd.Greeting;
 
 @Controller
-public class GreetingController {
+public class UserController {
 
-	@GetMapping("/greeting")
+	@GetMapping("/user")
 	public String greetingForm(Model model) {
-		model.addAttribute("greeting", new Greeting());
+		model.addAttribute("user", new User());
 		System.out.println("Get");
-		return "greeting";
+		return "user";
 	}
 
-	@PostMapping("/greeting")
-	public String greetingSubmit(@ModelAttribute Greeting greeting, Model model) {
-		model.addAttribute("greeting", greeting);
+	@PostMapping("/user")
+	public String greetingSubmit(@ModelAttribute User greeting, Model model) {
+		model.addAttribute("user", greeting);
 		System.out.println("Post");
 		return "result";
 	}
