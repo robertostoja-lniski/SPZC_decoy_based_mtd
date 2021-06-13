@@ -19,7 +19,7 @@ public class UserController {
 
 		model.addAttribute("user", user);
 		System.out.println("Post Login");
-		System.out.println("Id: " + user.getId());
+		System.out.println("Id: " + user.getName());
 		System.out.println("pwdHash: " + user.getPwdHash());
 		return "result";
 	}
@@ -29,7 +29,7 @@ public class UserController {
 
 		model.addAttribute("user", user);
 		System.out.println("Post Create");
-		System.out.println("Id: " + user.getId());
+		System.out.println("Id: " + user.getName());
 		System.out.println("pwdHash: " + user.getPwdHash());
 		return "result";
 	}

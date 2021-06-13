@@ -2,7 +2,7 @@ package spzc.mtd.project_decoy_mtd;
 
 public class User {
 
-	private long id;
+	private String name;
 	private String pwdHash;
 	private String email;
 
@@ -14,12 +14,12 @@ public class User {
 		this.email = email;
 	}
 
-	public long getId() {
-		return id;
+	public String getName() {
+		return name;
 	}
 
-	public void setId(long id) {
-		this.id = id;
+	public void setName(String name) {
+		this.name = name;
 	}
 
 	public String getPwdHash() {
