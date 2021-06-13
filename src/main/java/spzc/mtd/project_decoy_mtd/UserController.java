@@ -4,8 +4,12 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.HashMap;
+
 @Controller
 public class UserController {
+
+	HashMap<String, User> sessionUsers = new HashMap<String, User>();
 
 	@GetMapping("/user")
 	public String showMainPage(Model model) {
@@ -31,7 +35,20 @@ public class UserController {
 		System.out.println("Post Create");
 		System.out.println("Id: " + user.getName());
 		System.out.println("pwdHash: " + user.getPwdHash());
-		return "result";
+
+		if(!isUserCreated(user)) {
+			System.out.println("User: " + user.getName() + " not found.");
+			sessionUsers.put(user.getName(), user);
+			return "result";
+		} else {
+			System.out.println("User: " + user.getName() + " already exists!");
+			return "userExists";
+		}
+
+	}
+
+	public Boolean isUserCreated(User user) {
+		return sessionUsers.containsKey(user.getName());
 	}
 
 }

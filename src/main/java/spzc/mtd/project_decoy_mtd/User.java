@@ -1,5 +1,8 @@
 package spzc.mtd.project_decoy_mtd;
 
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
+
 public class User {
 
 	private String name;
@@ -26,8 +29,11 @@ public class User {
 		return pwdHash;
 	}
 
-	public void setPwdHash(String pwdHash) {
-		this.pwdHash = pwdHash;
+//	dla bezpieczenstwa przechowujemy skrot hasla
+	public void setPwdHash(String pwdHash) throws NoSuchAlgorithmException {
+		MessageDigest messageDigest = MessageDigest.getInstance("SHA-256");
+		messageDigest.update(pwdHash.getBytes());
+		this.pwdHash = new String(messageDigest.digest());
 	}
 
 }

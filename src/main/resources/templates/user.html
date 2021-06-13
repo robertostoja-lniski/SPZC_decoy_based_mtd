@@ -8,16 +8,16 @@
     <h1>Projekt z przedmiotu SPZC - Decoy based MTD</h1>
 	<h2>Zaloguj sie</h2>
     <form action="#" th:action="@{/user}" th:object="${user}" method="post">
-    	<p>Nazwa uzytkownika: <input type="text" th:field="*{name}" /></p>
-        <p>Haslo: <input type="text" th:field="*{pwdHash}" /></p>
+    	<p>Nazwa uzytkownika: <input type="text" th:field="*{name}" required/></p>
+        <p>Haslo: <input type="text" th:field="*{pwdHash}" required/></p>
         <p><input type="submit" value="Submit" name="loginTrial"/>
             <input type="reset" value="Reset" /></p>
     </form>
     <h2>albo zarejestruj</h2>
     <form action="#" th:action="@{/user}" th:object="${user}" method="post">
-        <p>Nazwa uzytkownika: <input type="text" th:field="*{name}" /></p>
-        <p>Email: <input type="text" th:field="*{pwdHash}" /></p>
-        <p>Haslo: <input type="text" th:field="*{pwdHash}" /></p>
+        <p>Nazwa uzytkownika: <input type="text" th:field="*{name}" required/></p>
+        <p>Email: <input type="text" th:field="*{email}" required/></p>
+        <p>Haslo (min 5 znakow): <input type="text" th:field="*{pwdHash}" required minlength="5"/></p>
         <p><input type="submit" value="Submit" name="createAccountTrial"/>
             <input type="reset" value="Reset" /></p>
     </form>

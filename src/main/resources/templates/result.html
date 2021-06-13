@@ -1,13 +1,13 @@
 <!DOCTYPE HTML>
 <html xmlns:th="https://www.thymeleaf.org">
 <head> 
-    <title>Getting Started: Handling Form Submission</title>
+    <title>SPZC utworzono konto</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 </head>
 <body>
-	<h1>Result</h1>
+	<h1>Utworzono uzytkownika</h1>
     <p th:text="'name: ' + ${user.name}" />
-    <p th:text="'content: ' + ${user.getPwdHash}" />
-    <a href="/user">Submit another message</a>
+    <p th:text="'email: ' + ${user.email}" />
+    <a href="/user">Powrot</a>
 </body>
 </html>
