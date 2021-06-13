@@ -5,11 +5,17 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 </head>
 <body>
-	<h1>Form</h1>
+	<h1>Login in</h1>
     <form action="#" th:action="@{/user}" th:object="${user}" method="post">
     	<p>Id: <input type="text" th:field="*{id}" /></p>
-        <p>Message: <input type="text" th:field="*{content}" /></p>
-        <p><input type="submit" value="Submit" /> <input type="reset" value="Reset" /></p>
+        <p>Message: <input type="text" th:field="*{pwdHash}" /></p>
+        <p><input type="submit" value="Submit" name="loginTrial"/> <input type="reset" value="Reset" /></p>
+    </form>
+    <h1>Or sign up</h1>
+    <form action="#" th:action="@{/user}" th:object="${user}" method="post">
+        <p>Id: <input type="text" th:field="*{id}" /></p>
+        <p>Message: <input type="text" th:field="*{pwdHash}" /></p>
+        <p><input type="submit" value="Submit" name="createAccountTrial"/> <input type="reset" value="Reset" /></p>
     </form>
 </body>
 </html>

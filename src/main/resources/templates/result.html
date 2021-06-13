@@ -7,7 +7,7 @@
 <body>
 	<h1>Result</h1>
     <p th:text="'id: ' + ${user.id}" />
-    <p th:text="'content: ' + ${user.content}" />
+    <p th:text="'content: ' + ${user.getPwdHash}" />
     <a href="/user">Submit another message</a>
 </body>
 </html>
