@@ -38,7 +38,7 @@ def multi_test(test_trials):
         end = time.time()
         # mierzymy czas 5 ostatnich zgloszen
         print(f"Dla {trial} zgloszen czas wynosi: {(end - start) / 5}")
-        results[trial] = {(end - start) / 5}
+        results[trial] = (end - start) / 5
 
         time.sleep(2)
 
@@ -47,4 +47,4 @@ def multi_test(test_trials):
 results = multi_test([100, 200, 300, 400, 500, 600, 700, 800, 900, 1000, 1100, 1200, 1300, 1400, 1500, 1600, 1700, 1800, 1900, 2000])
 print(f"Wyniki postaci liczba testow: czas obslugi zgloszenia")
 for test_number, result in results.items():
-    print(f"{test_number}\t{(end - start) / 5}")
+    print(result)

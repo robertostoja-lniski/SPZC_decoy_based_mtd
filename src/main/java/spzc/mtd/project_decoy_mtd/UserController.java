@@ -21,6 +21,12 @@ public class UserController {
 	@RequestMapping(value = "/user", method = RequestMethod.POST, params = "loginTrial")
 	public String loginCheck(@ModelAttribute User user, Model model) {
 
+		try {
+			Thread.sleep(10);
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
+
 		model.addAttribute("user", user);
 		System.out.println("Post Login");
 		System.out.println("Id: " + user.getName());
