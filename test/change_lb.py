@@ -6,8 +6,8 @@ from multiprocessing.dummy import Pool
 from datetime import datetime
 
 SERVER_ADDR_AND_PORT = 'http://127.0.0.1:8080/'
-ALT_SERVER_ADDR_AND_PORT = 'http://35.239.164.41:8080/'
-SERVER_ADDR_AND_PORT = 'http://104.154.236.131:8080/'
+SERVER_ADDR_AND_PORT = 'http://35.239.164.41:8080/'
+ALT_SERVER_ADDR_AND_PORT = 'http://104.154.236.131:8080/'
 
 def get_random_string(length):
     letters = string.ascii_lowercase
@@ -25,6 +25,8 @@ def multi_test(addr):
         futures.append(pool.apply_async(requests.post, [f'{addr}user?name={get_random_string(5)}&pwdHash=abbaw&loginTrial=Submit']))
         for future in futures:
             response = future.get()
+            print(response)
+
             if response.status_code == 200:
                 ok_count += 1
             else:
